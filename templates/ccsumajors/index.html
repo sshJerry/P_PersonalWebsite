@@ -1,0 +1,136 @@
+{% extends 'ccsumajors/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox" style=" width:100%; height: 800px !important;">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'img/rsz_aboutme.png' %}"
+                     alt="First slide">
+                <div class="carousel-caption d-none d-md-block"
+                     style="position: absolute; top: 50%; transform: translateY(-50%);">
+                    <h5 class="text-light display-3">About Me</h5>
+                    <p class="text-light lead">My name is Jerome. Feel free to call me Jerry. I'm 19 and a student
+                        studying computer science.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/rsz_programcode.png' %}"
+                     alt="Second slide">
+                <div class="carousel-caption d-none d-md-block"
+                     style="position: absolute; top: 50%; transform: translateY(-50%);">
+                    <h5 class="text-light display-3">Programmer</h5>
+                    <p class="text-light lead">Broad array of interests and experience ranging from General Programming,
+                        Web Development, Shell Scripting, Networking.</p>
+                    <p class="text-light lead">Familiar with Linux, Mac OS, and Windows. Security focused and aware</p>
+                    <p class="text-light lead">Very recently having interest reverse engineering</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/rsz_1msigeforce.png' %}"
+                     alt="Third slide">
+                <div class="carousel-caption d-none d-md-block"
+                     style="position: absolute; top: 50%; transform: translateY(-50%);">
+                    <h5 class="text-light display-3">Computer Hardware</h5>
+                    <p class="text-light lead">From a young age, been fascinated by computers in general. For friends
+                        and clients, I configure and if asked, build their dream computer. If interested, please contact
+                        me.</p>
+                    <p class="text-light lead"> No payment necessary but always appreciated. I love keeping up with the
+                        hardware market and any opportunity is a satisfaction in itself </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/rsz_newkeyboard.png' %}"
+                     alt="Fourth slide">
+                <div class="carousel-caption d-none d-md-block"
+                     style="position: absolute; top: 50%; transform: translateY(-50%);">
+                    <h5 class="text-light display-3">Free Time</h5>
+                    <p class="text-light lead">Outside of helping when I can, I indulge in video games ranging from
+                        League of Legends, Apex Legends, Dead by daylight, and Minecraft. In each respectively achieving
+                        between top 5~10% in my region</p>
+                    <p class="text-light lead">As time goes on, I find it difficult in allocating time for this and as
+                        of recently limited my time playing. Other hobbies and interests outside of computers like
+                        classic cars, politics, philosophy (In the realm of morality), investing and research fill the
+                        void</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                <h2 class="display-5">Project: Web Scraper</h2>
+                <p class="lead">Final project for my Secure Software Systems class.</p>
+            </div>
+            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <p class="text-light lead">Thus far one of the best projects I've gotten. Absent of the presentation,
+                    the lack of structure allowed me to think of a program useful for personal use. This was assigned a
+                    group project and while working with my group on our main idea, I worked on a personal scraper. One
+                    that allowed for getting specific information about a stock I've been following for some time. Being
+                    able to parse for specific information in a Jerry-Friendly, non bloated, format saved and continues
+                    to save me so much time.</p>
+            </div>
+        </div>
+
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                <h2 class="display-5">Project: This Website!</h2>
+                <p class="lead">Final Project for my Web Programming class</p>
+            </div>
+            <div class="bg-dark shadow-sm mx-auto"
+                 style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <p class="text-light lead">
+                    This final project was fairly open in requirements with a focus on something we'll actually use. I
+                    thought of a site highlighting some information about myself, my projects and more in the upcoming
+                    future. This was more than a class project but an opportunity to create something useful to myself
+                    personally.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                <h2 class="display-5">Personal Projects</h2>
+                <p class="lead">LLL</p>
+            </div>
+            <div class="bg-white shadow-sm mx-auto"
+                 style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <p class="lead">
+                    This final project was fairly open in requirements with a focus on something we'll actually use. I
+                    thought of a site highlighting some information about myself, my projects and more in the upcoming
+                    future. This was more than a class project but an opportunity to create something useful to myself
+                    personally.
+                </p>
+            </div>
+        </div>
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5">Contact Me</h2>
+                <p class="lead">My Github isn't public but please contact me if interested.</p>
+            </div>
+            <div class="bg-white shadow-sm mx-auto"
+                 style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        </div>
+    </div>
+{% endblock %}
