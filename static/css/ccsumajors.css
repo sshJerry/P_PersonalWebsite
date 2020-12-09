@@ -206,13 +206,64 @@ h2 {
     stroke-dasharray: 40, 0;
     stroke-dashoffset: 0;
 }
-@media (min-width: 700px) {  .carousel-images { height: 500px !important;}  }
-@media (min-width: 960px) {  .carousel-images { height: 450px !important;}  }
-@media (min-width: 1080px) {  .carousel-images { height: 500px !important;;}  }
-@media (min-width: 1150px) {  .carousel-images { height: 550px !important;;}  }
-@media (min-width: 1450px) {  .carousel-images { height: 600px !important;;}  }
-@media (min-width: 1920px) {  .carousel-images { height: 650px !important;;}  }
-@media (min-width: 2550px) {  .carousel-images { height: 670px !important;;}  }
+
+@media (min-width: 700px) {
+    .carousel-images {
+        height: 500px !important;
+    }
+
+    .card-text {
+        height: 550px !important;
+    }
+}
+
+@media (min-width: 960px) {
+    .carousel-images {
+        height: 450px !important;
+    }
+
+    .card-text {
+        height: 500px !important;
+    }
+}
+
+@media (min-width: 1080px) {
+    .carousel-images {
+        height: 500px !important;;
+    }
+
+    .card-text {
+        height: 450px !important;
+    }
+}
+
+@media (min-width: 1150px) {
+    .carousel-images {
+        height: 550px !important;;
+    }
+
+    .card-text {
+        height: 400px !important;
+    }
+}
+
+@media (min-width: 1450px) {
+    .carousel-images {
+        height: 600px !important;;
+    }
+}
+
+@media (min-width: 1920px) {
+    .carousel-images {
+        height: 650px !important;;
+    }
+}
+
+@media (min-width: 2550px) {
+    .carousel-images {
+        height: 670px !important;;
+    }
+}
 
 @media screen and (min-device-width: 960px) and (max-device-width: 1350px) {
     .logo {
