@@ -1,0 +1,47 @@
+{% extends 'ccsumajors/reg-log-base.html' %}
+{% load static %}
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <h3>Login</h3>
+    <form action="" class="Form" method="post">
+        {% csrf_token %}
+        <label class="Label">
+            <input class="Input" type="text"
+                   placeholder="Username" name="username"
+                   required minlength="3">
+            <svg viewBox="0 0 20 20" class="Icon">
+                <path d="M0 0 L10 10 L0 20"></path>
+            </svg>
+            <svg class="Line" viewBox="0 0 40 2"
+                 preserveAspectRatio="none">
+                <path d="M0 1 L40 1"></path>
+                <path d="M0 1 L40 1" class="focus"></path>
+                <path d="M0 1 L40 1" class="invalid"></path>
+                <path d="M0 1 L40 1" class="valid"></path>
+            </svg>
+        </label>
+        <label class="Label">
+            <input class="Input" type="password"
+                   placeholder="Password" name="password"
+                   required minlength="3">
+            <svg viewBox="0 0 20 20" class="Icon">
+                <path d="M0 0 L10 10 L0 20"></path>
+            </svg>
+            <svg class="Line" viewBox="0 0 40 2"
+                 preserveAspectRatio="none">
+                <path d="M0 1 L40 1"></path>
+                <path d="M0 1 L40 1" class="focus"></path>
+                <path d="M0 1 L40 1" class="invalid"></path>
+                <path d="M0 1 L40 1" class="valid"></path>
+            </svg>
+        </label>
+        <a href="{% url 'index' %}" class="nav-head nav-head-border-underline fw6">Back <i class="fas fa-backspace"></i></a>
+        <button class="nav-head nav-head-border-underline fw6" type="submit"> Sign in <i
+                class="fas fa-sign-in-alt"></i></button>
+        <a href="{% url 'register' %}" class="nav-head nav-head-border-underline fw6">Sign Up <i class="fas fa-user-plus"></i></a>
+    </form>
+
+{% endblock %}

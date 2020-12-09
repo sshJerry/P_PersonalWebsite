@@ -3,7 +3,7 @@
 
 {% block title %} <title>Degree Tree</title> {% endblock %}
 
-{% block head %}
+{% block more-styles %}
     <link rel="stylesheet" href="{% static 'space-tree-dependency/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'space-tree-dependency/css/spacetree.css' %}">
     <!-- Borrowed CSS Page philogb/jit -->
@@ -17,85 +17,90 @@
 {% endblock %}
 
 {% block body %}
-    <div id="container">
-        <div id="left-container">
-            <div class="text">
+    <div class="container-degree">
+        <div id="container">
+            <div id="left-container">
+                <div class="degree-text">
 
-                <h4>Tree Animation</h4>
-                A static JSON Tree structure is used as input for this animation.<br/><br/>
-                <b>Click</b> on a node to select it.<br/><br/>
-                You can <b>select the tree orientation</b> by changing the select box in the right column.<br/><br/>
-                You can <b>change the selection mode</b> from <em>Normal</em> selection (i.e. center the selected node)
-                to
-                <em>Set as Root</em>.<br/><br/>
-                <b>Drag and Drop the canvas</b> to do some panning.<br/><br/>
-                Leaves color depend on the number of children they actually have.
+                    <h4 class="h4-degree">Tree Animation</h4>
+                    A static JSON Tree structure is used as input for this animation.<br/><br/>
+                    <b>Click</b> on a node to select it.<br/><br/>
+                    You can <b>select the tree orientation</b> by changing the select box in the right column.<br/><br/>
+                    You can <b>change the selection mode</b> from <em>Normal</em> selection (i.e. center the selected
+                    node)
+                    to
+                    <em>Set as Root</em>.<br/><br/>
+                    <b>Drag and Drop the canvas</b> to do some panning.<br/><br/>
+                    Leaves color depend on the number of children they actually have.
+                </div>
+                <div id="id-list"></div>
+                <div style="text-align:center;"> *Both CS253 and CS254 are required to take: CS492, CS407, CS419, CS490,
+                    CS493
+                </div>
             </div>
-            <div id="id-list"></div>
-            <div style="text-align:center;"> *Both CS253 and CS254 are required to take: CS492, CS407, CS419, CS490,
-                CS493
+            <div id="center-container">
+                <div id="infovis"></div>
             </div>
-        </div>
-        <div id="center-container">
-            <div id="infovis"></div>
-        </div>
-        <div id="right-container">
-            <h4>Tree Orientation</h4>
-            <table>
-                <tr>
-                    <td>
-                        <label for="r-left">Left </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="r-left" name="orientation" checked="checked" value="left"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="r-top">Top </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="r-top" name="orientation" value="top"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="r-bottom">Bottom </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="r-bottom" name="orientation" value="bottom"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="r-right">Right </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="r-right" name="orientation" value="right"/>
-                    </td>
-                </tr>
-            </table>
+            <div id="right-container">
+                <h4 class="h4-degree">Tree Orientation</h4>
+                <table class="table-degree">
+                    <tr>
+                        <td>
+                            <label for="r-left">Left </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="r-left" name="orientation" checked="checked" value="left"
+                                   class="input-degree"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="r-top">Top </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="r-top" name="orientation" value="top" class="input-degree"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="r-bottom">Bottom </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="r-bottom" name="orientation" value="bottom" class="input-degree"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="r-right">Right </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="r-right" name="orientation" value="right" class="input-degree"/>
+                        </td>
+                    </tr>
+                </table>
 
-            <h4>Selection Mode</h4>
-            <table>
-                <tr>
-                    <td>
-                        <label for="s-normal">Normal </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="s-normal" name="selection" checked="checked" value="normal"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="s-root">Set as Root </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="s-root" name="selection" value="root"/>
-                    </td>
-                </tr>
-            </table>
+                <h4 class="h4-degree">Selection Mode</h4>
+                <table class="table-degree">
+                    <tr>
+                        <td>
+                            <label for="s-normal">Normal </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="s-normal" name="selection" checked="checked" value="normal"
+                                   class="input-degree"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="s-root">Set as Root </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="s-root" name="selection" value="root" class="input-degree"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="log"></div>
         </div>
-        <div id="log"></div>
     </div>
 {% endblock %}

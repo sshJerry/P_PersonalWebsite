@@ -1,0 +1,50 @@
+{% extends 'ccsumajors/reg-log-base.html' %}
+{% load static %}
+{% block title %}
+    <title>Register</title>
+{% endblock %}
+
+{% block body %}
+    <h3>Sign Up!</h3>
+    <form action="" class="Form" method="post">
+        {% csrf_token %}
+        {% for message in messages %}
+            <h3>{{ message }}</h3>
+        {% endfor %}
+        <label class="Label">
+            <svg viewBox="0 0 20 20" width="1rem">
+                <path d="M0 0 L10 10 L0 20" fill="none" stroke="black"></path>
+            </svg>
+            {{ registerForm.username }}
+            <svg class="Line" viewBox="0 0 40 2"
+                 preserveAspectRatio="none">
+                <path d="M0 1 L40 1" stroke="black"></path>
+            </svg>
+        </label>
+        <label class="Label">
+            <svg viewBox="0 0 20 20" width="1rem">
+                <path d="M0 0 L10 10 L0 20" fill="none" stroke="black"></path>
+            </svg>
+            {{ registerForm.password1 }}
+            <svg class="Line" viewBox="0 0 40 2"
+                 preserveAspectRatio="none">
+                <path d="M0 1 L40 1" stroke="black"></path>
+            </svg>
+        </label>
+        <label class="Label">
+            <svg viewBox="0 0 20 20" width="1rem">
+                <path d="M0 0 L10 10 L0 20" fill="none" stroke="black"></path>
+            </svg>
+            {{ registerForm.password2 }}
+            <svg class="Line" viewBox="0 0 40 2"
+                 preserveAspectRatio="none">
+                <path d="M0 1 L40 1" stroke="black"></path>
+            </svg>
+        </label>
+        <a href="{% url 'login' %}" class="nav-head nav-head-border-underline fw6">Back <i class="fas fa-backspace"></i></a>
+        <button class="nav-head nav-head-border-underline fw6" type="submit"> Create Account <i
+                class="fas fa-user-plus"></i>
+        </button>
+
+    </form>
+{% endblock %}

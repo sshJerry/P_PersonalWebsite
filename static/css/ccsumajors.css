@@ -1,114 +1,221 @@
-.container {
-  max-width: 960px;
-}
+@custom-media --breakpoint-not-small screen and (min-width: 48em);
 
-/*
- * Custom translucent site header
+@custom-media --breakpoint-medium screen and (min-width: 48em) and (max-width: 64em);
+
+@custom-media --breakpoint-large screen and (min-width: 64em);
+
+/* TEST
+@custom-media --breakpoint-not-small screen and (min-width: 30em);
+@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
  */
+:root {
+    --spacing-none: 0;
+    --spacing-extra-small: .25rem;
+    --spacing-small: .5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-extra-large: 4rem;
+    --spacing-extra-extra-large: 8rem;
+    --spacing-extra-extra-extra-large: 16rem;
+
+    --background-color: #ffffff;
+    --border-size: 4px;
+    --accent-color: #000000;
+}
 
 .site-header {
-  background-color: rgba(255, 255, 255, 0.85);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
 }
-.site-header a {
-  color: #999;
-  transition: ease-in-out color .15s;
+
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+    text-decoration-color: inherit !important;
 }
-.site-header a:hover {
-  color: #fff;
-  text-decoration: none;
+
+.nav-head {
+    background-color: var(--background-color);
+    color: #222;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-head.nav-head-border-underline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: var(--accent-color);
+
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+}
+
+.nav-head.nav-head-border-underline:hover::before,
+.nav-head.nav-head-border-underline:focus::before {
+    transform: scaleX(1);
 }
 
 /*
- * Dummy devices (replace them with your own or something else entirely!)
- */
+.carousel-inner > .item > img {
+  width:100%;
+  height:360px;
+}
+*/
 
-.product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
+/* LOGIN CONTAINER */
+.outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.product-device::before {
-  position: absolute;
-  top: 10%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
-  content: "";
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 5px;
+.login-form {
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-.product-device-2 {
-  top: -25%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  background-color: #e5e5e5;
+.text-fields {
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.login-input {
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+    margin: 0;
+    border: none;
+    padding: 0.5em 0;
+    line-height: 1;
+    transition: border-color 0.2s;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    line-height: 1;
+}
+
+.Form > * + * {
+    margin-top: 1.5rem;
 }
 
 
-/*
- * Extra utilities
- */
-
-.flex-equal > * {
-  -ms-flex: 1;
-  flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    -ms-flex: 1;
-    flex: 1;
-  }
+.Label {
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.overflow-hidden { overflow: hidden; }
-
-/*
- * COOL BUTTONS
- */
-
-button {
-  margin: 1rem;
+.Input {
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+    margin: 0;
+    border: none;
+    padding: 0.5em 0;
+    line-height: 1;
+    transition: border-color 0.2s;
 }
 
-.btn {
-  background-color: var(--background-color);
-  color: #222;
-  padding: .5em 1em;
-  border: none;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-
-  --background-color: #ffffff;
-  --border-size: 4px;
-  --accent-color: #000000;
+.Input:focus {
+    outline: none;
 }
 
-.btn.btn-border-underline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: var(--border-size);
-  background-color: var(--accent-color);
-  transition: transform 300ms ease-in-out;
-
-  transform: scaleX(0);
+.Icon {
+    width: 1rem;
+    order: -1;
+    transition: all 0.2s;
+    stroke-dasharray: 0, 20;
+    stroke-dashoffset: -14.142;
 }
 
-.btn.btn-border-underline:hover::before,
-.btn.btn-border-underline:focus::before {
-  transform: scaleX(1);
+.Icon path {
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
+
+.Input:focus + .Icon {
+    stroke-dasharray: 28.284, 20;
+    stroke-dashoffset: 0;
+}
+
+.Line {
+    width: 100%;
+    height: 2px;
+    stroke: hsl(0, 0%, 75%);
+    stroke-width: 2px;
+    margin-left: 1rem;
+}
+
+.Line .focus,
+.Line .valid,
+.Line .invalid {
+    transition: all 0.2s;
+    stroke-dasharray: 0, 20;
+    stroke-dashoffset: -20;
+}
+
+.Line .focus {
+    stroke: black;
+}
+
+.Line .valid {
+    stroke: hsl(166, 72%, 40%);
+}
+
+.Line .invalid {
+    stroke: hsl(0, 100%, 40%);
+}
+
+.Input:focus ~ .Line .focus,
+.Input:valid ~ .Line .valid,
+.Input[data-touched]:invalid ~ .Line .invalid {
+    stroke-dasharray: 40, 0;
+    stroke-dashoffset: 0;
+}
+@media (min-width: 700px) {  .carousel-images { height: 500px !important;}  }
+@media (min-width: 960px) {  .carousel-images { height: 450px !important;}  }
+@media (min-width: 1080px) {  .carousel-images { height: 500px !important;;}  }
+@media (min-width: 1150px) {  .carousel-images { height: 550px !important;;}  }
+@media (min-width: 1450px) {  .carousel-images { height: 600px !important;;}  }
+@media (min-width: 1920px) {  .carousel-images { height: 650px !important;;}  }
+@media (min-width: 2550px) {  .carousel-images { height: 670px !important;;}  }
+
+@media screen and (min-device-width: 960px) and (max-device-width: 1350px) {
+    .logo {
+        visibility: hidden;
+    }
 }
